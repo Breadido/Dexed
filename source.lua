@@ -56,7 +56,7 @@ function dexed.SetupUI(title)
 	local PageListLayout = Instance.new("UIListLayout")
 	local PageContents = Instance.new("Frame")
 
-	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.Parent = game.CoreGui or game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	Dexed.Name = "Dexed"
