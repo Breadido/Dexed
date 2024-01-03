@@ -408,20 +408,17 @@ function dexed.SetupUI(title)
 				TextLabel.Text = Value
 				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 260) * Fill.AbsoluteSize.X) + tonumber(minvalue)) or 0
 				func(Value)
-				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 				Fill.Size = UDim2.new(0, math.clamp(mouse.X - Fill.AbsolutePosition.X, 0, 260), 0, 16)
 				moveconnection = mouse.Move:Connect(function()
 					TextLabel.Text = Value
 					Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 260) * Fill.AbsoluteSize.X) + tonumber(minvalue))
 					func(Value)
-					game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 					Fill.Size = UDim2.new(0, math.clamp(mouse.X - Fill.AbsolutePosition.X, 0, 260), 0, 16)
 				end)
 				releaseconnection = uis.InputEnded:Connect(function(Mouse)
 					if Mouse.UserInputType == Enum.UserInputType.MouseButton1 or Mouse.UserInputType == Enum.UserInputType.Touch then
 						Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 260) * Fill.AbsoluteSize.X) + tonumber(minvalue))
 						func(Value)
-						game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 						Fill.Size = UDim2.new(0, math.clamp(mouse.X - Fill.AbsolutePosition.X, 0, 260), 0, 16)
 						moveconnection:Disconnect()
 						releaseconnection:Disconnect()
